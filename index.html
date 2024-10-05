@@ -11,7 +11,7 @@
             height: 100%;
             font-family: 'Arial', sans-serif;
             color: #fff;
-            background: url('background1.webp') no-repeat center center fixed;
+            background: url('background1.webp') no-repeat center center;
             background-size: cover;
         }
 
@@ -32,10 +32,9 @@
             position: relative;
         }
 
-        /* Reverted: Bigger and bolder Social Gore heading */
         header h1 {
-            font-size: 6rem; /* Increased font size */
-            font-weight: 900; /* Bolder weight */
+            font-size: 6rem;
+            font-weight: 900;
             letter-spacing: 4px;
             text-transform: uppercase;
         }
@@ -131,14 +130,10 @@
             margin-right: 10px;
         }
 
-        /* Fix for mobile */
+        /* Fix for mobile scrolling */
         @media (max-width: 768px) {
-            body, html {
-                background-attachment: scroll; /* Mobile browsers don't handle fixed well */
-            }
-
-            .overlay {
-                position: absolute; /* Keep overlay as relative so it scrolls with content */
+            body {
+                background-attachment: scroll;
             }
         }
     </style>
