@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = filter_var($message, FILTER_SANITIZE_STRING);
 
     // Email settings
-    $to = "youremail@example.com"; // Replace with your email address
+    $to = "matt@socialgore.com"; // Replace with your email address
     $subject = "New Contact Form Submission";
     $headers = "From: $email" . "\r\n" .
                "Reply-To: $email" . "\r\n" .
