@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +13,10 @@
             color: #fff;
             background: url('background1.webp') no-repeat center center fixed;
             background-size: cover;
-            overflow: hidden;
         }
         .overlay {
             background: rgba(0, 0, 0, 0.7);
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -63,6 +61,7 @@
             padding: 50px;
             z-index: 2;
             position: relative;
+            min-height: 100vh;
         }
         .music-section, .services-section {
             margin-bottom: 50px;
@@ -113,7 +112,7 @@
 
     <header>
         <h1>Social Gore</h1>
-        <p>Professional Audio Services</p>
+        <p>Music and pro audio serices</p>
         <nav>
             <a href="#music">Music</a>
             <a href="#services">Services</a>
@@ -124,22 +123,24 @@
     <div class="content">
         <section id="music" class="music-section">
             <h2>My Music</h2>
-            <p>Here you'll find a collection of my latest projects</p>
+            <p>Latest Projects</p>
             <!-- Embed your music here (e.g., Spotify, SoundCloud, Bandcamp) -->
             <a href="#" class="button">Listen Now</a>
         </section>
 
         <section id="services" class="services-section">
             <h2>Audio Services</h2>
-            <p>Looking for high-quality mixing, mastering, or production? I specialize in creating rich, dark, and atmospheric soundscapes that resonate with the post-metal, post-hardcore, noise rock, sludge and punk genres.</p>
+            <p>Specializing in post-metal, post-hardcore, noise rock, sludge and punk genres</p>
             <a href="#" class="button">Contact for Services</a>
         </section>
     </div>
 
-
-
     <footer>
-        <p>&copy; 2024 Social Gore. All rights reserved.</p>
+        <p>Connect with me:</p>
+        <a href="#" target="_blank">Instagram</a> |
+        <a href="#" target="_blank">Bandcamp</a> |
+        <a href="#" target="_blank">Spotify</a> |
+        <a href="#" target="_blank">Email</a>
     </footer>
 </body>
 </html>
