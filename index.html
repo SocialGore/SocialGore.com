@@ -130,14 +130,18 @@
             margin-right: 10px;
         }
 
-        /* Fix for mobile scrolling */
+        /* Mobile-specific adjustments */
         @media (max-width: 768px) {
-            body, html {
+            body {
                 background-attachment: scroll;
             }
 
-            .overlay {
-                position: absolute;
+            header h1 {
+                font-size: 4rem;
+            }
+
+            .content {
+                padding: 20px;
             }
         }
     </style>
@@ -179,5 +183,13 @@
         |
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
+
+    <!-- JavaScript to handle iOS scrolling -->
+    <script>
+        // Detect iOS devices
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+            document.body.style.backgroundAttachment = "scroll";
+        }
+    </script>
 </body>
 </html>
