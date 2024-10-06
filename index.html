@@ -51,7 +51,7 @@
             transform: scale(1.1);
         }
 
-        /* SGbars banner with a much slower fade-in and faster fade-out */
+        /* SGbars banner with explicit slow fade-in and faster fade-out */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
@@ -61,7 +61,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            transition: opacity 20s ease-in, opacity 2s ease-out; /* Slowed down to 20s fade-in */
+            transition: opacity 20s ease-in !important, opacity 2s ease-out; /* Enforcing fade-in timing */
             z-index: 2;
         }
 
