@@ -135,16 +135,24 @@
         }
 
         /* Contact form styling */
+        .contact-section {
+            margin-top: 50px;
+        }
+
         form {
             margin-top: 20px;
             display: flex;
             flex-direction: column;
             max-width: 600px;
             margin: 0 auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         label {
             margin-bottom: 5px;
+            color: #fff;
         }
 
         input, textarea {
@@ -154,6 +162,7 @@
             background-color: #222;
             color: #fff;
             border-radius: 5px;
+            width: 100%;
         }
 
         input[type="submit"] {
@@ -179,6 +188,10 @@
 
             .content {
                 padding: 20px;
+            }
+
+            form {
+                width: 90%;
             }
         }
     </style>
@@ -220,20 +233,20 @@
 
             <form action="submit_form.php" method="POST">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
+                <input type="text" id="name" name="name" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
                 <input type="submit" value="Submit">
             </form>
         </section>
     </div>
 
-    <footer id="contact">
+    <footer>
         <p>Connect:</p>
         <a href="https://socialgore.bandcamp.com" target="_blank">
             <img src="bandcamp.png" alt="Bandcamp">
