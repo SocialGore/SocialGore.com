@@ -93,6 +93,56 @@
             min-height: 100vh;
         }
 
+        /* Gear Section with Flip Cards */
+        .gear-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 50px 0;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: black; /* Set the front of the card to black to match image */
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flip-card-back {
+            background-color: #444;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -118,7 +168,6 @@
             margin-right: 10px;
         }
 
-        /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
@@ -130,6 +179,11 @@
 
             .content {
                 padding: 20px;
+            }
+
+            .flip-card {
+                width: 150px;
+                height: 250px;
             }
         }
     </style>
@@ -145,4 +199,49 @@
     </header>
 
     <div class="content">
-        <!-- Gear content
+        <!-- Gear Section with Flip Cards -->
+        <section class="gear-section">
+            <!-- Flip Card 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="nevembp.jpg" alt="Rupert Neve Designs Portico II Master Buss Processor" style="width:100%;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Rupert Neve Designs Portico II Master Buss Processor</h3>
+                        <p>A master buss processor with compression, limiting, and stereo field editing for dynamic control and sound coloring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flip Card 2 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="nevesat.jpg" alt="5059 Satellite 16 x 2+2 Summing Mixer" style="width:100%;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>5059 Satellite 16 x 2+2 Summing Mixer</h3>
+                        <p>A 16 x 2+2 summing mixer delivering the ultimate 'out-of-the-box' sonics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more gear as needed -->
+        </section>
+    </div>
+
+    <footer>
+        <p>Connect:</p>
+        <a href="https://socialgore.bandcamp.com" target="_blank">
+            <img src="bandcamp.png" alt="Bandcamp">
+        </a>
+        <a href="#" target="_blank">
+            <img src="spotify.png" alt="Spotify">
+        </a>
+        |
+        <a href="mailto:matt@socialgore.com">Email</a>
+    </footer>
+
+</body>
+</html>
