@@ -44,7 +44,7 @@
             position: relative;
         }
 
-        /* Make the logo image 135px */
+        /* Keep the logo at 135px and fade out to very faint */
         header img.logo {
             width: auto;
             height: 135px; /* Adjusted height to 135px */
@@ -54,10 +54,11 @@
         }
 
         header:hover img.logo {
-            opacity: 0;
+            opacity: 0.1; /* Make the logo very faint, not completely invisible */
             transform: scale(1.1);
         }
 
+        /* SGbars banner fades in to 60% opacity */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
@@ -72,7 +73,7 @@
         }
 
         header:hover .sgbars-banner {
-            opacity: 1;
+            opacity: 0.6; /* Stop fading in at 60% opacity */
         }
 
         nav {
