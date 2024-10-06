@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gear - Social Gore</title>
+    <title>Gear</title>
     <style>
         body, html {
             margin: 0;
@@ -33,8 +33,9 @@
             position: relative;
         }
 
+        /* Updated to say "Gear" */
         header h1 {
-            font-size: 7rem;
+            font-size: 6rem;
             font-weight: 900;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -63,17 +64,19 @@
             border-color: #fff;
         }
 
+        /* Adjusted for better layout */
         .gear-section {
             padding: 50px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted to fit more gear cards */
+            gap: 30px; /* Increased gap for better spacing */
+            justify-items: center;
         }
 
         .flip-card {
             background-color: transparent;
-            width: 250px;
-            height: 250px;
+            width: 230px; /* Slightly reduced width */
+            height: 230px; /* Closer to square dimensions */
             perspective: 1000px;
         }
 
@@ -108,14 +111,14 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            border-radius: 10px 10px 0 0;
+            border-radius: 10px;
         }
 
         .flip-card-back {
             background-color: #444;
             color: white;
             transform: rotateY(180deg);
-            padding: 20px;
+            padding: 15px; /* Adjusted padding for text */
             text-align: center;
             overflow-y: auto;
             border-radius: 10px;
@@ -147,14 +150,13 @@
             vertical-align: middle;
             margin-right: 10px;
         }
-
     </style>
 </head>
 <body>
     <div class="overlay"></div>
 
     <header>
-        <h1>Social Gore - Gear</h1>
+        <h1>Gear</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
