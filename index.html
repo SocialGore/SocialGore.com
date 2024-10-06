@@ -25,7 +25,7 @@
             z-index: 1;
         }
 
-        /* Header with title fade into background */
+        /* Header with hover fade effect */
         header {
             text-align: center;
             padding: 50px;
@@ -40,13 +40,13 @@
             text-transform: uppercase;
             margin: 0;
             color: #fff;
-            transition: opacity 5s ease, transform 5s ease; /* Slow fade and scale */
+            transition: opacity 3s ease, transform 3s ease; /* Smooth fade and scale */
         }
 
-        /* On hover or automatically, title fades into background */
-        header h1.fade-background {
-            opacity: 0; /* Completely invisible */
-            transform: scale(1.1); /* Slight enlargement for effect */
+        /* Fade into the background on hover */
+        header h1:hover {
+            opacity: 0; /* Completely fades out */
+            transform: scale(1.1); /* Slight enlargement */
         }
 
         nav {
@@ -143,15 +143,6 @@
             }
         }
     </style>
-
-    <script>
-        // Automatically apply the fade effect after a delay
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('header h1').classList.add('fade-background');
-            }, 3000); // Delay of 3 seconds before fading starts
-        };
-    </script>
 </head>
 <body>
     <div class="overlay"></div>
