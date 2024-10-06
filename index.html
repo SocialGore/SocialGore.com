@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Gore</title>
     <style>
         body, html {
@@ -26,7 +25,6 @@
             z-index: 1;
         }
 
-        /* Centered Header with Slower Fade Animation */
         header {
             text-align: center;
             padding: 50px;
@@ -42,19 +40,17 @@
             margin: 0;
             opacity: 0;
             transform: scale(0.9);
-            animation: fadeInScaleUp 3s ease forwards; /* Slower fade-in */
+            animation: fadeInScaleUp 3s ease forwards;
             position: relative;
             color: #fff;
         }
 
-        /* Hover Effect with Very Dark Grey Color */
         header h1:hover {
-            color: #1a1a1a; /* Almost black shade of grey */
+            color: #1a1a1a;
             transform: scale(1.1);
-            transition: color 1.2s, transform 0.5s ease; /* Slower transition */
+            transition: color 1.2s, transform 0.5s ease;
         }
 
-        /* Fade-In and Scale-Up Animation */
         @keyframes fadeInScaleUp {
             0% {
                 opacity: 0;
@@ -73,7 +69,6 @@
             margin-top: 20px;
         }
 
-        /* Restore original button shape and font */
         nav a {
             color: #bbb;
             text-decoration: none;
@@ -86,7 +81,6 @@
             overflow: hidden;
         }
 
-        /* Keep the animated SGbars background */
         nav a::before {
             content: '';
             position: absolute;
@@ -117,10 +111,12 @@
             min-height: 100vh;
         }
 
-        /* Center the Bandcamp player */
-        .music-section iframe {
-            display: block;
-            margin: 0 auto;
+        /* Properly center Bandcamp player */
+        .music-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
         footer {
@@ -148,7 +144,6 @@
             margin-right: 10px;
         }
 
-        /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
@@ -160,10 +155,6 @@
 
             .content {
                 padding: 20px;
-            }
-
-            form {
-                width: 90%;
             }
         }
     </style>
@@ -183,7 +174,7 @@
     <div class="content">
         <section id="music" class="music-section">
             <!-- Centered Bandcamp Embed -->
-            <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
+            <iframe style="border: 0; width: 100%; max-width: 600px; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
         </section>
     </div>
 
