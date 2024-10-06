@@ -26,7 +26,7 @@
             z-index: 1;
         }
 
-        /* Centered Header with Hover Animation */
+        /* Centered Header with Slower Fade Animation */
         header {
             text-align: center;
             padding: 50px;
@@ -42,16 +42,16 @@
             margin: 0;
             opacity: 0;
             transform: scale(0.9);
-            animation: fadeInScaleUp 2s ease forwards;
+            animation: fadeInScaleUp 3s ease forwards; /* Slower fade-in */
             position: relative;
             color: #fff;
         }
 
-        /* Hover Effect for Social Gore Text */
+        /* Hover Effect with Very Dark Grey Color */
         header h1:hover {
-            color: #4a536b; /* Grey/blueish color on hover */
+            color: #1a1a1a; /* Almost black shade of grey */
             transform: scale(1.1);
-            transition: color 0.3s, transform 0.3s ease;
+            transition: color 1.2s, transform 0.5s ease; /* Slower transition */
         }
 
         /* Fade-In and Scale-Up Animation */
@@ -95,46 +95,7 @@
             min-height: 100vh;
         }
 
-        /* Button with Animated SGbars Background */
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            color: #fff;
-            text-transform: uppercase;
-            text-decoration: none;
-            background: url('SGbars.jpeg') no-repeat center center;
-            background-size: cover;
-            border-radius: 10px;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            transition: all 0.4s ease-in-out;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #666;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            transition: background 0.4s ease-in-out;
-            z-index: 1;
-        }
-
-        .button:hover::before {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-        }
-
+        /* Remove unnecessary lower buttons */
         footer {
             text-align: center;
             padding: 30px;
@@ -196,15 +157,6 @@
         <section id="music" class="music-section">
             <!-- Embed Bandcamp Player -->
             <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
-        </section>
-
-        <section id="services" class="services-section">
-            <a href="mailto:matt@socialgore.com" class="button">Contact for Services</a>
-        </section>
-
-        <!-- Gear Section Link -->
-        <section id="gear" class="gear-section">
-            <a href="gear.html" class="button">Explore Gear</a>
         </section>
     </div>
 
