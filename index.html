@@ -134,6 +134,39 @@
             margin-right: 10px;
         }
 
+        /* Contact form styling */
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #666;
+            background-color: #222;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #666;
+        }
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             body {
@@ -165,7 +198,7 @@
     <div class="content">
         <section id="music" class="music-section">
             <h2>
-                <img src="morebarstrans.jpeg" alt="Latest"> Latest
+                <img src="latest.png" alt="Latest"> Latest
             </h2>
 
             <!-- Embed Bandcamp Player -->
@@ -174,9 +207,29 @@
 
         <section id="services" class="services-section">
             <h2>
-                <img src="morebarstrans copy.jpeg" alt="Audio Services"> Audio Services
+                <img src="audio-services.png" alt="Audio Services"> Audio Services
             </h2>
             <a href="mailto:matt@socialgore.com" class="button">Contact for Services</a>
+        </section>
+
+        <!-- Contact form -->
+        <section id="contact" class="contact-section">
+            <h2>
+                <img src="email-icon.png" alt="Contact Us"> Contact Us
+            </h2>
+
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
         </section>
     </div>
 
