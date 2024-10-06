@@ -42,7 +42,10 @@
             text-align: center;
             padding: 50px;
             z-index: 2;
-            position: relative;
+            position: fixed; /* Fixed position to stay at the top */
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Background to blend with the page */
         }
 
         header img.logo {
@@ -70,9 +73,11 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 50px;
+            margin-top: 250px; /* Adjusted for the fixed header */
+            position: fixed;
+            top: 200px; /* Below the SGbars banner */
+            width: 100%;
             z-index: 2;
-            position: relative;
         }
 
         nav a {
@@ -112,10 +117,9 @@
 
         /* Content Section */
         .content {
-            padding: 50px;
+            padding: 300px 50px 50px; /* Padding to account for fixed nav and banner */
             z-index: 2;
             position: relative;
-            min-height: 100vh;
         }
 
         .music-section iframe {
@@ -164,13 +168,12 @@
     </style>
 
     <script>
-        // Check for scroll or hover events
+        // Detect scroll and trigger animation based on scroll position
         window.onscroll = function() {
             checkScroll();
         };
 
         function checkScroll() {
-            const header = document.querySelector('header');
             const logo = document.querySelector('.logo');
             const banner = document.querySelector('.sgbars-banner');
 
@@ -185,7 +188,7 @@
             }
         }
 
-        // Handle hover effect for logo and banner
+        // Hover effect for logo and banner
         document.querySelector('header').addEventListener('mouseover', function() {
             document.querySelector('.logo').style.opacity = '0.6';
             document.querySelector('.sgbars-banner').style.opacity = '0.2';
