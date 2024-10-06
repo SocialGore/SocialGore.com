@@ -13,7 +13,7 @@
             color: #fff;
             background: url('background1.webp') no-repeat center center fixed;
             background-size: cover;
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
 
         .overlay {
@@ -163,8 +163,8 @@
         <nav>
             <a href="#music">Music</a>
             <a href="#services">Services</a>
-            <a href="#gear">Gear</a>
-            <a href="#contact">Contact</a>
+            <a href="gear.html">Gear</a>
+            <a href="#contact">Contact</a> <!-- Ensure the link points to #contact -->
         </nav>
     </header>
 
@@ -191,6 +191,14 @@
                 <img src="SGbars.jpeg" alt="Pro Audio Gear" loading="lazy"> Gear
             </h2>
             <a href="gear.html" class="button">Explore Gear</a>
+        </section>
+
+        <!-- Contact Section (Ensure the id matches the link) -->
+        <section id="contact">
+            <h2>
+                <img src="SGbars.jpeg" alt="Contact Us" loading="lazy"> Contact Us
+            </h2>
+            <p>If you'd like to get in touch, feel free to email at <a href="mailto:matt@socialgore.com">matt@socialgore.com</a>.</p>
         </section>
     </div>
 
