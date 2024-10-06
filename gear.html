@@ -33,6 +33,7 @@
             position: relative;
         }
 
+        /* Change to "Social Gear" */
         header h1 {
             font-size: 6rem;
             font-weight: 900;
@@ -72,11 +73,12 @@
             justify-items: center;
         }
 
+        /* Flip Card Styling */
         .flip-card {
             background-color: transparent;
             width: 250px;
             height: 250px;
-            perspective: 1000px;
+            perspective: 1000px; /* Perspective for flip effect */
         }
 
         .flip-card-inner {
@@ -88,7 +90,7 @@
         }
 
         .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg); /* Flip effect */
         }
 
         .flip-card-front, .flip-card-back {
@@ -150,38 +152,17 @@
             vertical-align: middle;
             margin-right: 10px;
         }
-
-        /* Cool Button Styling */
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            color: #fff;
-            text-transform: uppercase;
-            text-decoration: none;
-            background: linear-gradient(45deg, #ff0057, #ff5500);
-            border-radius: 30px;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .button:hover {
-            background: linear-gradient(45deg, #ff5500, #ff0057);
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
 
     <header>
-        <h1>Gear</h1>
+        <h1>Social Gear</h1> <!-- Changed to "Social Gear" -->
         <nav>
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a> <!-- Link to services page -->
-            <a href="contact.html">Contact</a> <!-- Link to contact page -->
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
