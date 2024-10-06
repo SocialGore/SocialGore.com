@@ -26,7 +26,7 @@
             z-index: 1;
         }
 
-        /* Header styling with simplified animation */
+        /* Centered Header with glitch animation */
         header {
             text-align: center;
             padding: 50px;
@@ -42,7 +42,7 @@
             margin: 0;
             opacity: 0;
             transform: scale(0.9);
-            animation: fadeIn 1.5s ease forwards; /* Page load animation */
+            animation: fadeIn 1.5s ease forwards, glitch 0.5s steps(2, end) infinite; /* Glitch effect */
             position: relative;
         }
 
@@ -50,6 +50,34 @@
         header h1:hover {
             transform: scale(1.05);
             transition: transform 0.3s ease-in-out;
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% {
+                clip-path: inset(10% 0 20% 0);
+                transform: skew(0.5deg);
+            }
+            20% {
+                clip-path: inset(30% 0 10% 0);
+                transform: skew(1deg);
+            }
+            40% {
+                clip-path: inset(10% 0 30% 0);
+                transform: skew(0.5deg);
+            }
+            60% {
+                clip-path: inset(40% 0 10% 0);
+                transform: skew(1deg);
+            }
+            80% {
+                clip-path: inset(10% 0 40% 0);
+                transform: skew(0.5deg);
+            }
+            100% {
+                clip-path: inset(0% 0 0% 0);
+                transform: skew(0);
+            }
         }
 
         /* Fade In Animation */
@@ -115,6 +143,26 @@
         p {
             font-size: 1rem;
             line-height: 1.6;
+        }
+
+        /* Fix for Buttons */
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #444;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #666;
+        }
+
+        .button:hover {
+            background: #666;
+            border-color: #fff;
+            transform: scale(1.05);
         }
 
         footer {
