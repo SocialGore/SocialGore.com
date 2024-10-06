@@ -70,7 +70,7 @@
             min-height: 100vh;
         }
 
-        .music-section, .services-section, .bio-section {
+        .music-section, .services-section {
             margin-bottom: 50px;
         }
 
@@ -145,60 +145,11 @@
             opacity: 1;
         }
 
-        /* Custom Audio Player */
-        .audio-player {
-            margin: 20px 0;
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .audio-player button {
-            background-color: #444;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .audio-player button:hover {
-            background-color: #666;
-        }
-
         /* Hover Effects */
         a:hover img {
             transform: scale(1.1);
             filter: brightness(1.2);
             transition: 0.3s ease-in-out;
-        }
-
-        /* Bio Section (Interactive) */
-        .bio-section {
-            padding: 50px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-        }
-
-        .bio-item {
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .bio-item:hover {
-            color: #ddd;
-        }
-
-        .bio-item p {
-            display: none;
-            margin-top: 10px;
-        }
-
-        .bio-item.active p {
-            display: block;
         }
 
         /* Mobile-specific adjustments */
@@ -229,54 +180,25 @@
         <nav>
             <a href="#music">Music</a>
             <a href="#services">Services</a>
-            <a href="#bio">Bio</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <div class="content">
-        <!-- Music Section -->
         <section id="music" class="music-section">
             <h2>
                 <img src="SGbars.jpeg" alt="Latest" loading="lazy"> Latest
             </h2>
 
-            <div class="audio-player">
-                <button id="play-button">Play</button>
-                <span id="track-name">The Pale King</span>
-                <canvas id="visualizer" width="600" height="100"></canvas>
-            </div>
+            <!-- Embed Bandcamp Player -->
+            <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
         </section>
 
-        <!-- Audio Services Section -->
         <section id="services" class="services-section">
             <h2>
                 <img src="SGbars.jpeg" alt="Audio Services" loading="lazy"> Audio Services
             </h2>
-            <p>I offer a wide range of audio services specializing in post-metal, noise rock, and sludge. Contact me for specific service packages.</p>
             <a href="mailto:matt@socialgore.com" class="button">Contact for Services</a>
-        </section>
-
-        <!-- Interactive Biography Section -->
-        <section id="bio" class="bio-section">
-            <h2>
-                <img src="SGbars.jpeg" alt="Biography" loading="lazy"> Biography
-            </h2>
-
-            <div class="bio-item">
-                <h3>Influences</h3>
-                <p>My sound is influenced by bands like Neurosis, Isis, and Swans, blending post-metal with sludge and noise rock.</p>
-            </div>
-
-            <div class="bio-item">
-                <h3>Journey</h3>
-                <p>I started as a DIY musician and evolved into a professional, shaping my style through collaborations and projects.</p>
-            </div>
-
-            <div class="bio-item">
-                <h3>Gear</h3>
-                <p>I use a mix of analog and digital gear, including modular synthesizers and DAWs like Pro Tools and Ableton Live.</p>
-            </div>
         </section>
     </div>
 
@@ -299,60 +221,7 @@
             img.onload = () => img.classList.add('loaded');
         });
 
-        // Bio section interactivity
-        const bioItems = document.querySelectorAll('.bio-item');
-        bioItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        // Custom audio player functionality
-        const audioPlayer = document.createElement('audio');
-        audioPlayer.src = 'your-track-url.mp3'; // Add your track URL here
-        const playButton = document.getElementById('play-button');
-        playButton.addEventListener('click', () => {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playButton.innerText = 'Pause';
-            } else {
-                audioPlayer.pause();
-                playButton.innerText = 'Play';
-            }
-        });
-
-        // Music visualizer
-        const canvas = document.getElementById('visualizer');
-        const ctx = canvas.getContext('2d');
-        const analyser = new (window.AudioContext || window.webkitAudioContext)().createAnalyser();
-
-        const source = new (window.AudioContext || window.webkitAudioContext)().createMediaElementSource(audioPlayer);
-        source.connect(analyser);
-        analyser.connect(new (window.AudioContext || window.webkitAudioContext)().destination);
-        
-        analyser.fftSize = 256;
-        const bufferLength = analyser.frequencyBinCount;
-        const dataArray = new Uint8Array(bufferLength);
-
-        function drawVisualizer() {
-            requestAnimationFrame(drawVisualizer);
-            analyser.getByteFrequencyData(dataArray);
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#222';
-            const barWidth = (canvas.width / bufferLength) * 1.5;
-            let barHeight;
-            let x = 0;
-
-            for (let i = 0; i < bufferLength; i++) {
-                barHeight = dataArray[i] / 2;
-                ctx.fillStyle = `rgb(${barHeight + 100}, 50, 50)`;
-                ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-                x += barWidth + 1;
-            }
-        }
-
-        drawVisualizer();
+        // Parallax scrolling is handled by fixed background attachment
     </script>
 </body>
 </html>
