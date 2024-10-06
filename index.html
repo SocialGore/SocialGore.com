@@ -51,7 +51,7 @@
             transform: scale(1.1);
         }
 
-        /* SGbars banner with even slower fade-in (20s) */
+        /* SGbars banner restored with slower fade-in */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
@@ -61,7 +61,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            transition: opacity 25s ease-in, opacity 2s ease-out; /* Slower fade-in (25s) */
+            transition: opacity 15s ease-in, opacity 2s ease-out;
             z-index: 2;
         }
 
@@ -70,7 +70,7 @@
             opacity: 1;
         }
 
-        /* Navigation placed closer to the banner */
+        /* Navigation placed under the banner */
         nav {
             display: flex;
             justify-content: center;
@@ -177,7 +177,6 @@
         <div class="sgbars-banner"></div>
     </header>
 
-    <!-- Navigation placed closer to the banner -->
     <nav>
         <a href="#music">Music</a>
         <a href="#services">Services</a>
