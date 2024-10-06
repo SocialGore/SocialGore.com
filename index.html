@@ -3,6 +3,10 @@
 <head>
     <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Gore</title>
+
+    <!-- Add SGbars image as the favicon -->
+    <link rel="icon" type="image/png" href="SGbars.png" sizes="32x32">
+    
     <style>
         body, html {
             margin: 0;
@@ -25,7 +29,6 @@
             z-index: 1;
         }
 
-        /* Header container */
         header {
             text-align: center;
             padding: 50px;
@@ -33,7 +36,6 @@
             position: relative;
         }
 
-        /* Title text styling */
         header h1 {
             font-size: 7rem;
             font-weight: 900;
@@ -45,13 +47,11 @@
             position: relative;
         }
 
-        /* Title fades out on hover */
         header:hover h1 {
             opacity: 0;
             transform: scale(1.1);
         }
 
-        /* SGbars banner restored with slower fade-in */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
@@ -65,12 +65,10 @@
             z-index: 2;
         }
 
-        /* SGbars fades in as title fades out */
         header:hover .sgbars-banner {
             opacity: 1;
         }
 
-        /* Navigation placed under the banner */
         nav {
             display: flex;
             justify-content: center;
@@ -122,7 +120,6 @@
             min-height: 100vh;
         }
 
-        /* Center Bandcamp player */
         .music-section iframe {
             display: block;
             margin: 0 auto;
@@ -173,7 +170,6 @@
 
     <header>
         <h1>Social Gore</h1>
-        <!-- SGbars Banner fades in as the title fades out -->
         <div class="sgbars-banner"></div>
     </header>
 
@@ -185,7 +181,6 @@
 
     <div class="content">
         <section id="music" class="music-section">
-            <!-- Centered Bandcamp Embed -->
             <iframe style="border: 0; width: 100%; max-width: 600px; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
         </section>
     </div>
@@ -201,6 +196,5 @@
         |
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
-
 </body>
 </html>
