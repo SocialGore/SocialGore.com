@@ -11,7 +11,7 @@
             height: 100%;
             font-family: 'Arial', sans-serif;
             color: #fff;
-            background: url('background1.webp') no-repeat center center fixed;
+            background: url('background1.webp') no-repeat center center;
             background-size: cover;
         }
 
@@ -32,16 +32,12 @@
             position: relative;
         }
 
+        /* Increased the size of the Social Gore text */
         header h1 {
-            font-size: 6rem;
+            font-size: 7rem; /* Increased font size */
             font-weight: 900;
             letter-spacing: 4px;
             text-transform: uppercase;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            font-style: italic;
         }
 
         nav {
@@ -82,6 +78,14 @@
             margin-bottom: 20px;
             letter-spacing: 3px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
         }
 
         p {
@@ -137,7 +141,7 @@
             }
 
             header h1 {
-                font-size: 4rem;
+                font-size: 5rem;
             }
 
             .content {
@@ -160,14 +164,18 @@
 
     <div class="content">
         <section id="music" class="music-section">
-            <h2>Latest</h2>
+            <h2>
+                <img src="morebarstrans.jpeg" alt="Latest"> Latest
+            </h2>
 
             <!-- Embed Bandcamp Player -->
             <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
         </section>
 
         <section id="services" class="services-section">
-            <h2>Audio Services</h2>
+            <h2>
+                <img src="morebarstrans copy.jpeg" alt="Audio Services"> Audio Services
+            </h2>
             <a href="mailto:matt@socialgore.com" class="button">Contact for Services</a>
         </section>
     </div>
@@ -184,9 +192,7 @@
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
 
-    <!-- JavaScript to handle iOS scrolling -->
     <script>
-        // Detect iOS devices
         if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
             document.body.style.backgroundAttachment = "scroll";
         }
