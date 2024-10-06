@@ -50,32 +50,31 @@
             transform: scale(1.1);
         }
 
-        /* SGbars banner, now larger like before */
+        /* SGbars banner with a slower fade-in effect */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
             background-size: cover;
             height: 200px; /* Larger banner size */
             width: 100%;
-            position: absolute;
-            top: 50%; /* Aligns with the title */
-            left: 0;
-            transform: translateY(-50%);
-            transition: opacity 3s ease;
-            z-index: -1;
+            position: relative; /* Positioned below title */
+            margin-top: 20px;
+            transition: opacity 7s ease; /* Slower fade-in effect */
         }
 
         /* SGbars banner fades in as title fades out */
         header:hover .sgbars-banner {
             opacity: 1;
-            z-index: 1;
         }
 
+        /* Navigation placed below the banner */
         nav {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
+            z-index: 2; /* Keep buttons below banner */
+            position: relative;
         }
 
         nav a {
@@ -173,12 +172,14 @@
         <h1>Social Gore</h1>
         <!-- SGbars Banner fades in as the title fades out -->
         <div class="sgbars-banner"></div>
-        <nav>
-            <a href="#music">Music</a>
-            <a href="#services">Services</a>
-            <a href="gear.html">Gear</a>
-        </nav>
     </header>
+
+    <!-- Navigation placed below the banner -->
+    <nav>
+        <a href="#music">Music</a>
+        <a href="#services">Services</a>
+        <a href="gear.html">Gear</a>
+    </nav>
 
     <div class="content">
         <section id="music" class="music-section">
