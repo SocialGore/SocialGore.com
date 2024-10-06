@@ -14,6 +14,9 @@
             background: url('background1.webp') no-repeat center center fixed;
             background-size: cover;
             scroll-behavior: smooth;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .overlay {
@@ -26,7 +29,13 @@
             z-index: 1;
         }
 
-        /* Social Gore Animation */
+        /* Centering Header and Effects */
+        header {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
         header h1 {
             font-size: 7rem;
             font-weight: 900;
@@ -34,38 +43,40 @@
             text-transform: uppercase;
             margin: 0;
             opacity: 0;
-            animation: fadeInScaleUp 3s ease-in-out forwards, glitch 1.5s ease-in-out 3.5s infinite;
+            animation: fadeInGlow 2s ease forwards; /* Runs once after page load */
             position: relative;
+            display: inline-block;
+            color: #fff;
         }
 
-        /* Fade In and Scale Up */
-        @keyframes fadeInScaleUp {
+        /* New Hover Effect */
+        header h1:hover {
+            animation: glowHover 0.5s ease forwards;
+        }
+
+        /* Fade In & Initial Glow on Page Load */
+        @keyframes fadeInGlow {
             0% {
                 opacity: 0;
-                transform: scale(0.8);
+                transform: scale(0.9);
+                text-shadow: none;
             }
             100% {
                 opacity: 1;
                 transform: scale(1);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
             }
         }
 
-        /* Glitch Effect */
-        @keyframes glitch {
+        /* Glow and Scale on Hover */
+        @keyframes glowHover {
             0% {
-                clip-path: inset(0% 0 0% 0);
-            }
-            25% {
-                clip-path: inset(30% 0 0% 0);
-            }
-            50% {
-                clip-path: inset(15% 0 85% 0);
-            }
-            75% {
-                clip-path: inset(70% 0 5% 0);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+                transform: scale(1);
             }
             100% {
-                clip-path: inset(0% 0 0% 0);
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+                transform: scale(1.05);
             }
         }
 
