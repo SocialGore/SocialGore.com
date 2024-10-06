@@ -14,9 +14,6 @@
             background: url('background1.webp') no-repeat center center fixed;
             background-size: cover;
             scroll-behavior: smooth;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .overlay {
@@ -29,11 +26,12 @@
             z-index: 1;
         }
 
-        /* Centering Header and Effects */
+        /* Header styling with simplified animation */
         header {
-            position: relative;
             text-align: center;
+            padding: 50px;
             z-index: 2;
+            position: relative;
         }
 
         header h1 {
@@ -43,40 +41,26 @@
             text-transform: uppercase;
             margin: 0;
             opacity: 0;
-            animation: fadeInGlow 2s ease forwards; /* Runs once after page load */
+            transform: scale(0.9);
+            animation: fadeIn 1.5s ease forwards; /* Page load animation */
             position: relative;
-            display: inline-block;
-            color: #fff;
         }
 
-        /* New Hover Effect */
+        /* Hover Effect */
         header h1:hover {
-            animation: glowHover 0.5s ease forwards;
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Fade In & Initial Glow on Page Load */
-        @keyframes fadeInGlow {
+        /* Fade In Animation */
+        @keyframes fadeIn {
             0% {
                 opacity: 0;
                 transform: scale(0.9);
-                text-shadow: none;
             }
             100% {
                 opacity: 1;
                 transform: scale(1);
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-            }
-        }
-
-        /* Glow and Scale on Hover */
-        @keyframes glowHover {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-                transform: scale(1);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-                transform: scale(1.05);
             }
         }
 
