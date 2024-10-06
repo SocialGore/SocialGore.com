@@ -43,10 +43,27 @@
             transition: opacity 3s ease, transform 3s ease; /* Smooth fade and scale */
         }
 
-        /* Fade into the background on hover */
+        /* Title fades out when hovered */
         header h1:hover {
-            opacity: 0; /* Completely fades out */
+            opacity: 0;
             transform: scale(1.1); /* Slight enlargement */
+        }
+
+        /* Banner for SGbars image - hidden initially */
+        .sgbars-banner {
+            opacity: 0;
+            background: url('SGbars.jpeg') no-repeat center center;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
+            position: absolute;
+            top: 100%; /* Position it right below the header */
+            transition: opacity 3s ease;
+        }
+
+        /* SGbars banner fades in as title fades out */
+        header h1:hover + .sgbars-banner {
+            opacity: 1;
         }
 
         nav {
@@ -149,6 +166,8 @@
 
     <header>
         <h1>Social Gore</h1>
+        <!-- SGbars Banner that fades in -->
+        <div class="sgbars-banner"></div>
         <nav>
             <a href="#music">Music</a>
             <a href="#services">Services</a>
