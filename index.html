@@ -37,60 +37,36 @@
             z-index: 1;
         }
 
+        /* Header with image fade effect */
         header {
             text-align: center;
             padding: 50px;
             z-index: 2;
-            position: relative;
+            position: fixed; /* Fixed header */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Background to blend in while scrolling */
         }
 
-        /* Keep the logo at 135px and fade out to very faint */
         header img.logo {
             width: auto;
-            height: 135px; /* Adjusted height to 135px */
+            height: 135px;
             transition: opacity 3s ease, transform 3s ease;
-            position: relative;
             z-index: 3;
         }
 
-        header:hover img.logo {
-            opacity: 0.6; /* Make the logo faint */
-            transform: scale(1.1);
-        }
-
-        /* SGbars banner fades in to 20% opacity */
+        /* Keep SGbars banner fixed */
         .sgbars-banner {
-            opacity: 0;
+            opacity: 0.6;
             background: url('SGbars.jpeg') no-repeat center center;
             background-size: cover;
             height: 200px;
             width: 100%;
-            position: absolute;
+            position: fixed; /* Fixed banner */
             top: 0;
             left: 0;
-            transition: opacity 15s ease-in, opacity 2s ease-out;
             z-index: 2;
-        }
-
-        header:hover .sgbars-banner {
-            opacity: 0.2; /* Stop fading in at 20% opacity */
-        }
-
-        /* Hamburger Menu Styles */
-        .hamburger {
-            cursor: pointer;
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 30px;
-            z-index: 1000;
-        }
-
-        .hamburger div {
-            background-color: #fff;
-            height: 4px;
-            width: 100%;
         }
 
         /* Navigation */
@@ -98,9 +74,11 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 50px;
+            margin-top: 250px; /* To account for the fixed banner */
             z-index: 2;
-            position: relative;
+            position: fixed; /* Fixed navigation */
+            top: 200px;
+            width: 100%;
         }
 
         nav a {
@@ -113,6 +91,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            z-index: 2;
         }
 
         nav a::before {
@@ -124,8 +103,7 @@
             height: 100%;
             background: url('SGbars.jpeg') no-repeat center center;
             background-size: cover;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            opacity: 1; /* Hover state stays visible */
             z-index: -1;
         }
 
@@ -138,54 +116,11 @@
             border-color: #fff;
         }
 
-        /* Hide the menu by default on small screens */
-        .nav-links {
-            display: none;
-        }
-
-        /* Show the hamburger on small screens */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.9);
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            nav a {
-                margin-bottom: 20px;
-                font-size: 1.5rem;
-            }
-
-            header h1 {
-                font-size: 5rem;
-            }
-
-            .content {
-                padding: 20px;
-            }
-        }
-
         /* Content Section */
         .content {
-            padding: 50px;
+            padding: 300px 50px 50px; /* Add padding to account for fixed nav and banner */
             z-index: 2;
             position: relative;
-            min-height: 100vh;
         }
 
         .music-section iframe {
@@ -217,14 +152,21 @@
             vertical-align: middle;
             margin-right: 10px;
         }
-    </style>
 
-    <script>
-        // Hamburger Menu Toggle
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('show');
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            header h1 {
+                font-size: 5rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
         }
-    </script>
+    </style>
 </head>
 <body>
     <div class="overlay"></div>
@@ -235,15 +177,8 @@
         <div class="sgbars-banner"></div>
     </header>
 
-    <!-- Hamburger Menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
     <!-- Navigation Menu -->
-    <nav class="nav-links">
+    <nav>
         <a href="#music">Music</a>
         <a href="#services">Services</a>
     </nav>
