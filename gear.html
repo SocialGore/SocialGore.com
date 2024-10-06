@@ -33,7 +33,6 @@
             position: relative;
         }
 
-        /* Updated to say "Gear" */
         header h1 {
             font-size: 6rem;
             font-weight: 900;
@@ -64,19 +63,19 @@
             border-color: #fff;
         }
 
-        /* Adjusted for better layout */
+        /* Gear Section */
         .gear-section {
             padding: 50px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted to fit more gear cards */
-            gap: 30px; /* Increased gap for better spacing */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             justify-items: center;
         }
 
         .flip-card {
             background-color: transparent;
-            width: 230px; /* Slightly reduced width */
-            height: 230px; /* Closer to square dimensions */
+            width: 230px;
+            height: 230px;
             perspective: 1000px;
         }
 
@@ -118,7 +117,7 @@
             background-color: #444;
             color: white;
             transform: rotateY(180deg);
-            padding: 15px; /* Adjusted padding for text */
+            padding: 15px;
             text-align: center;
             overflow-y: auto;
             border-radius: 10px;
@@ -128,6 +127,7 @@
             margin-top: 0;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 30px;
@@ -150,6 +150,27 @@
             vertical-align: middle;
             margin-right: 10px;
         }
+
+        /* Cool Button Styling */
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: linear-gradient(45deg, #ff0057, #ff5500);
+            border-radius: 30px;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #ff5500, #ff0057);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -159,8 +180,8 @@
         <h1>Gear</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a> <!-- Link fixed to services.html -->
-            <a href="contact.html">Contact</a> <!-- Link fixed to contact.html -->
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -199,11 +220,12 @@
         <a href="https://socialgore.bandcamp.com" target="_blank">
             <img src="bandcamp.png" alt="Bandcamp">
         </a>
-        <a href="https://open.spotify.com" target="_blank"> <!-- Link fixed to Spotify -->
+        <a href="https://open.spotify.com" target="_blank">
             <img src="spotify.png" alt="Spotify">
         </a>
         |
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
+
 </body>
 </html>
