@@ -42,10 +42,7 @@
             text-align: center;
             padding: 50px;
             z-index: 2;
-            position: fixed; /* Fixed position to stay at the top */
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Background to blend with the page */
+            position: relative;
         }
 
         header img.logo {
@@ -73,11 +70,12 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 250px; /* Adjusted for the fixed header */
-            position: fixed;
-            top: 200px; /* Below the SGbars banner */
-            width: 100%;
-            z-index: 2;
+            margin-top: 20px; /* Adjusted for the fixed header */
+            position: sticky;
+            top: 0; /* Fixed to the top of the page when scrolling */
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8); /* Background for visibility */
+            padding: 10px 0;
         }
 
         nav a {
@@ -117,9 +115,10 @@
 
         /* Content Section */
         .content {
-            padding: 300px 50px 50px; /* Padding to account for fixed nav and banner */
+            padding: 50px;
             z-index: 2;
             position: relative;
+            min-height: 100vh;
         }
 
         .music-section iframe {
