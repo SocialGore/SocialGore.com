@@ -25,7 +25,7 @@
             z-index: 1;
         }
 
-        /* Header with hover fade effect */
+        /* Header styling */
         header {
             text-align: center;
             padding: 50px;
@@ -33,6 +33,7 @@
             position: relative;
         }
 
+        /* Title fade-in/out */
         header h1 {
             font-size: 7rem;
             font-weight: 900;
@@ -40,30 +41,35 @@
             text-transform: uppercase;
             margin: 0;
             color: #fff;
-            transition: opacity 3s ease, transform 3s ease; /* Smooth fade and scale */
+            transition: opacity 3s ease, transform 3s ease;
+            position: relative;
         }
 
-        /* Title fades out when hovered */
+        /* SGbars banner initially hidden, will replace title */
+        .sgbars-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            background: url('SGbars.jpeg') no-repeat center center;
+            background-size: contain;
+            opacity: 0;
+            transition: opacity 3s ease;
+            z-index: -1; /* Initially hidden behind */
+        }
+
+        /* On hover, title fades out and banner fades in */
         header h1:hover {
             opacity: 0;
-            transform: scale(1.1); /* Slight enlargement */
+            transform: scale(1.1);
         }
 
-        /* Banner for SGbars image - properly placed under the title */
-        .sgbars-banner {
-            opacity: 0;
-            background: url('SGbars.jpeg') no-repeat center center;
-            background-size: cover;
-            height: 200px;
-            width: 100%;
-            position: relative;
-            transition: opacity 3s ease;
-            margin-top: 20px; /* Space between title and banner */
-        }
-
-        /* SGbars banner fades in as title fades out */
         header h1:hover + .sgbars-banner {
             opacity: 1;
+            z-index: 2; /* Bring banner to the front */
         }
 
         nav {
@@ -166,7 +172,7 @@
 
     <header>
         <h1>Social Gore</h1>
-        <!-- SGbars Banner that fades in, placed under the title -->
+        <!-- SGbars Banner will replace the title -->
         <div class="sgbars-banner"></div>
         <nav>
             <a href="#music">Music</a>
