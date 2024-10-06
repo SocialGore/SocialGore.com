@@ -44,31 +44,31 @@
             transition: opacity 3s ease, transform 3s ease;
         }
 
-        /* Hide title and show SGbars on hover */
+        /* Title fades out when hovered */
         header:hover h1 {
             opacity: 0;
-            transform: scale(1.1); /* Slight enlargement */
+            transform: scale(1.1);
         }
 
-        /* SGbars image is initially hidden */
+        /* SGbars banner, now larger like before */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
-            background-size: contain;
-            height: 7rem; /* Same height as the title */
+            background-size: cover;
+            height: 200px; /* Larger banner size */
             width: 100%;
             position: absolute;
-            top: 50%; /* Position exactly where the title is */
+            top: 50%; /* Aligns with the title */
             left: 0;
-            transform: translateY(-50%); /* Ensure proper centering */
+            transform: translateY(-50%);
             transition: opacity 3s ease;
             z-index: -1;
         }
 
-        /* SGbars fades in as the title fades out */
+        /* SGbars banner fades in as title fades out */
         header:hover .sgbars-banner {
             opacity: 1;
-            z-index: 1; /* Bring banner to the front */
+            z-index: 1;
         }
 
         nav {
