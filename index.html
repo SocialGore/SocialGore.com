@@ -49,16 +49,16 @@
             transform: scale(1.1); /* Slight enlargement */
         }
 
-        /* Banner for SGbars image - hidden initially */
+        /* Banner for SGbars image - properly placed under the title */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
             background-size: cover;
             height: 200px;
             width: 100%;
-            position: absolute;
-            top: 100%; /* Position it right below the header */
+            position: relative;
             transition: opacity 3s ease;
+            margin-top: 20px; /* Space between title and banner */
         }
 
         /* SGbars banner fades in as title fades out */
@@ -166,7 +166,7 @@
 
     <header>
         <h1>Social Gore</h1>
-        <!-- SGbars Banner that fades in -->
+        <!-- SGbars Banner that fades in, placed under the title -->
         <div class="sgbars-banner"></div>
         <nav>
             <a href="#music">Music</a>
