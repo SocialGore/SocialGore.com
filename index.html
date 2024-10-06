@@ -42,39 +42,32 @@
             margin: 0;
             color: #fff;
             transition: opacity 3s ease, transform 3s ease;
+            position: relative;
         }
 
-        /* Title fades out when hovered */
+        /* Title fades out on hover */
         header:hover h1 {
             opacity: 0;
             transform: scale(1.1);
         }
 
-        /* SGbars banner with slower fade-in and faster fade-out */
+        /* SGbars banner, positioned over the title */
         .sgbars-banner {
             opacity: 0;
             background: url('SGbars.jpeg') no-repeat center center;
             background-size: cover;
             height: 200px;
             width: 100%;
-            position: absolute; /* To take the same position as the title */
-            top: 50%;
+            position: absolute;
+            top: 0;
             left: 0;
-            transform: translateY(-50%);
-            transition: opacity 7s ease-in, opacity 2s ease-out; /* Slower fade-in, faster fade-out */
-            z-index: -1;
+            transition: opacity 7s ease-in, opacity 2s ease-out;
+            z-index: 2; /* Positioned above other content */
         }
 
         /* SGbars fades in as title fades out */
         header:hover .sgbars-banner {
             opacity: 1;
-            z-index: 1;
-        }
-
-        /* Fade out banner faster when hover ends */
-        header h1:not(:hover) + .sgbars-banner {
-            opacity: 0;
-            transition: opacity 2s ease-out;
         }
 
         /* Navigation placed below the banner */
@@ -82,8 +75,9 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 220px; /* Adjust for the height of the banner */
             z-index: 2;
+            position: relative;
         }
 
         nav a {
