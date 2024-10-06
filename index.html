@@ -76,6 +76,24 @@
             opacity: 0.2; /* Stop fading in at 20% opacity */
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            cursor: pointer;
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            background-color: #fff;
+            height: 4px;
+            width: 100%;
+        }
+
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
@@ -120,6 +138,49 @@
             border-color: #fff;
         }
 
+        /* Hide the menu by default on small screens */
+        .nav-links {
+            display: none;
+        }
+
+        /* Show the hamburger on small screens */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.9);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            nav a {
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 5rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        /* Content Section */
         .content {
             padding: 50px;
             z-index: 2;
@@ -156,35 +217,35 @@
             vertical-align: middle;
             margin-right: 10px;
         }
-
-        @media (max-width: 768px) {
-            body {
-                background-attachment: scroll;
-            }
-
-            header h1 {
-                font-size: 5rem;
-            }
-
-            .content {
-                padding: 20px;
-            }
-        }
     </style>
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
 </head>
 <body>
     <div class="overlay"></div>
 
-    <!-- Replace the text with the image -->
+    <!-- Header with fading logo and SGbars banner -->
     <header>
         <img src="sgtextlogo.png" alt="Social Gore Logo" id="logo" class="logo">
         <div class="sgbars-banner"></div>
     </header>
 
-    <nav>
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-links">
         <a href="#music">Music</a>
         <a href="#services">Services</a>
-        <a href="gear.html">Gear</a>
     </nav>
 
     <div class="content">
