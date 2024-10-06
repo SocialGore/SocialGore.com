@@ -70,7 +70,7 @@
             min-height: 100vh;
         }
 
-        .music-section, .services-section {
+        .music-section, .services-section, .gear-section {
             margin-bottom: 50px;
         }
 
@@ -135,79 +135,6 @@
             margin-right: 10px;
         }
 
-        /* Lazy loading for images */
-        img[loading="lazy"] {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        img[loading="lazy"].loaded {
-            opacity: 1;
-        }
-
-        /* Flip Cards Styling */
-        .gear-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 50px 0;
-        }
-
-        .flip-card {
-            background-color: transparent;
-            width: 250px;
-            height: 250px; /* Adjusted height to make it closer to square */
-            perspective: 1000px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px;
-        }
-
-        .flip-card-front {
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .flip-card-front img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .flip-card-back {
-            background-color: #444;
-            color: white;
-            transform: rotateY(180deg);
-            padding: 20px;
-            text-align: center;
-            overflow-y: auto;
-            border-radius: 10px;
-        }
-
-        .flip-card-back h3 {
-            margin-top: 0;
-        }
-
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             body {
@@ -236,7 +163,7 @@
         <nav>
             <a href="#music">Music</a>
             <a href="#services">Services</a>
-            <a href="gear.html">Gear</a> <!-- Link to the new Gear page -->
+            <a href="#gear">Gear</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -256,6 +183,14 @@
                 <img src="SGbars.jpeg" alt="Audio Services" loading="lazy"> Audio Services
             </h2>
             <a href="mailto:matt@socialgore.com" class="button">Contact for Services</a>
+        </section>
+
+        <!-- Gear Section Link -->
+        <section id="gear" class="gear-section">
+            <h2>
+                <img src="SGbars.jpeg" alt="Pro Audio Gear" loading="lazy"> Gear
+            </h2>
+            <a href="gear.html" class="button">Explore Gear</a>
         </section>
     </div>
 
