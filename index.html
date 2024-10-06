@@ -13,7 +13,7 @@
             color: #fff;
             background: url('background1.webp') no-repeat center center fixed;
             background-size: cover;
-            scroll-behavior: smooth; /* Smooth scrolling */
+            scroll-behavior: smooth;
         }
 
         .overlay {
@@ -94,20 +94,25 @@
             line-height: 1.6;
         }
 
+        /* Cool Button Styling */
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #444;
+            padding: 12px 24px;
             color: #fff;
             text-transform: uppercase;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            background: linear-gradient(45deg, #ff0057, #ff5500);
+            border-radius: 30px;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .button:hover {
-            background-color: #666;
+            background: linear-gradient(45deg, #ff5500, #ff0057);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
         }
 
         footer {
@@ -163,8 +168,8 @@
         <nav>
             <a href="#music">Music</a>
             <a href="#services">Services</a>
-            <a href="gear.html">Gear</a>
-            <a href="#contact">Contact</a> <!-- Ensure the link points to #contact -->
+            <a href="#gear">Gear</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -193,7 +198,7 @@
             <a href="gear.html" class="button">Explore Gear</a>
         </section>
 
-        <!-- Contact Section (Ensure the id matches the link) -->
+        <!-- Contact Section -->
         <section id="contact">
             <h2>
                 <img src="SGbars.jpeg" alt="Contact Us" loading="lazy"> Contact Us
