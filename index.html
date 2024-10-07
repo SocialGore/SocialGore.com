@@ -158,15 +158,6 @@
             padding: 50px 0;
         }
 
-        .gear-grid h2 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            grid-column: 1 / -1;
-            text-align: center;
-        }
-
         .gear-item {
             position: relative;
             overflow: hidden;
@@ -246,13 +237,27 @@
             margin-right: 10px;
         }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
             }
 
+            header img.logo {
+                height: 90px; /* Scale down the logo */
+            }
+
+            .gear-grid {
+                grid-template-columns: 1fr; /* Make gear items stack vertically */
+            }
+
+            nav {
+                flex-direction: column; /* Stack navigation links vertically */
+                gap: 10px;
+            }
+
             .content {
-                padding: 20px;
+                padding: 20px; /* Reduce padding on mobile */
             }
         }
     </style>
@@ -292,9 +297,9 @@
         </section>
 
         <section id="gear" class="gear-grid">
-    <h2>
-        <img src="geartext.png" alt="Gear" style="max-width: 25%; height: auto;">
-    </h2>
+            <h2>
+                <img src="geartext.png" alt="Gear" style="max-width: 25%; height: auto;">
+            </h2>
 
             <!-- Gear Item 1 -->
             <div class="gear-item">
