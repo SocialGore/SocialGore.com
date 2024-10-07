@@ -112,9 +112,10 @@
 
         /* Content Section */
         .content {
-            padding-top: 120px; /* Ensure space for the header and navigation */
+            padding: 100px 50px; /* Ensure space for the header and navigation */
             z-index: 2;
             position: relative;
+            min-height: 100vh; /* Ensure footer stays at the bottom */
         }
 
         .music-section iframe {
@@ -125,6 +126,7 @@
         footer {
             text-align: center;
             padding: 30px;
+            z-index: 2;
         }
 
         footer a {
