@@ -147,7 +147,7 @@
             font-size: 1.2rem;
             line-height: 1.6;
             max-width: 800px;
-            margin: 0;
+            margin: 0 auto;
         }
 
         /* Gear Grid Section */
@@ -244,20 +244,29 @@
             }
 
             header img.logo {
-                height: 90px; /* Scale down the logo */
+                height: 90px;
             }
 
             .gear-grid {
-                grid-template-columns: 1fr; /* Make gear items stack vertically */
+                grid-template-columns: 1fr;
             }
 
             nav {
-                flex-direction: column; /* Stack navigation links vertically */
-                gap: 10px;
+                flex-direction: column;
+                gap: 15px;
             }
 
             .content {
-                padding: 20px; /* Reduce padding on mobile */
+                padding: 20px;
+            }
+
+            .services-section p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .gear-info h3, .gear-info p {
+                font-size: 1rem;
             }
         }
     </style>
