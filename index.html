@@ -131,94 +131,28 @@
             margin: 0 auto;
         }
 
-        /* Services Section */
-        .services-section {
-            padding: 50px 0;
-        }
-
-        .services-section h2 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .services-section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0;
-        }
-
-        /* Gear Grid Section */
-        .gear-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 50px 0;
-        }
-
-        .gear-grid h2 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            grid-column: 1 / -1;
+        .playlist {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
             text-align: center;
         }
 
-        .gear-item {
-            position: relative;
-            overflow: hidden;
-            background-color: black;
-            border-radius: 10px;
+        .playlist li {
+            padding: 10px;
             cursor: pointer;
-            height: 300px;
-        }
-
-        .gear-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .gear-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gear-info {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gear-item:hover .gear-info {
-            opacity: 1;
-        }
-
-        .gear-info h3 {
-            margin: 0;
-            font-size: 1.5rem;
+            background-color: #444;
+            margin: 5px 0;
+            border-radius: 8px;
             color: #fff;
         }
 
-        .gear-info p {
-            font-size: 1rem;
-            margin-top: 10px;
-            color: #bbb;
-            text-align: center;
-            padding: 0 10px;
+        .playlist li:hover {
+            background-color: #666;
+        }
+
+        .active {
+            background-color: #888;
         }
 
         footer {
@@ -254,6 +188,10 @@
             .content {
                 padding: 20px;
             }
+
+            .playlist li {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -275,80 +213,19 @@
     <div class="content">
         <section id="music" class="music-section">
             <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
-        </section>
+            
+            <!-- Audio Player and Playlist -->
+            <h2>Custom Playlist</h2>
+            <audio id="audio-player" controls>
+                Your browser does not support the audio element.
+            </audio>
 
-        <section id="services" class="services-section">
-            <h2>Mixing/Mastering</h2>
-            <p>
-                I offer professional mixing and mastering services designed to bring your music to life. Utilizing a hybrid mix setup with high-end analog gear, I ensure that every project benefits from a pristine signal path and the warmth and character that pro analog equipment can help deliver.<br><br>
-                I specialize in genres including:<br>
-                • Post-Metal<br>
-                • Post-Black Metal<br>
-                • Sludge<br>
-                • Noise-Rock<br>
-                • Hardcore<br>
-                • Punk
-            </p>
-        </section>
-
-        <section id="gear" class="gear-grid">
-            <h2>
-                <img src="geartext.png" alt="Gear" style="max-width: 25%; height: auto;">
-            </h2>
-
-            <!-- Gear Item 1 -->
-            <div class="gear-item">
-                <img src="nevembp.jpg" alt="Rupert Neve Designs Portico II Master Buss Processor">
-                <div class="gear-info">
-                    <h3>Rupert Neve Designs Portico II</h3>
-                    <p>Master Buss Processor</p>
-                </div>
-            </div>
-
-            <!-- Gear Item 2 -->
-            <div class="gear-item">
-                <img src="nevesat.jpg" alt="5059 Satellite 16 x 2+2 Summing Mixer">
-                <div class="gear-info">
-                    <h3>5059 Satellite 16 x 2+2 Summing Mixer</h3>
-                    <p>16 x 2+2 Summing Mixer</p>
-                </div>
-            </div>
-
-            <!-- Gear Item 3 -->
-            <div class="gear-item">
-                <img src="orion.jpg" alt="Orion 32 Channels">
-                <div class="gear-info">
-                    <h3>Antelope Audio Orion 32+ Gen 3</h3>
-                    <p>32 Channels of State-of-the-Art Conversion</p>
-                </div>
-            </div>
-
-            <!-- Gear Item 4 -->
-            <div class="gear-item">
-                <img src="phoenix.jpg" alt="Thermionic Culture Phoenix">
-                <div class="gear-info">
-                    <h3>Thermionic Culture Phoenix</h3>
-                    <p>Premium Boutique Tube Compression</p>
-                </div>
-            </div>
-
-            <!-- Gear Item 5 -->
-            <div class="gear-item">
-                <img src="vulture.jpg" alt="Thermionic Culture Vulture">
-                <div class="gear-info">
-                    <h3>Thermionic Culture Vulture</h3>
-                    <p>Tube-Based Distortion</p>
-                </div>
-            </div>
-
-            <!-- Gear Item 6 -->
-            <div class="gear-item">
-                <img src="api2500.jpg" alt="API 2500">
-                <div class="gear-info">
-                    <h3>API 2500</h3>
-                    <p>Legendary Stereo Compressor</p>
-                </div>
-            </div>
+            <!-- Playlist with multiple tracks -->
+            <ul class="playlist">
+                <li data-src="BrokenDreams.aiff">Track 1 - Song One</li>
+                <li data-src="audio/song2.mp3">Track 2 - Song Two</li>
+                <li data-src="audio/song3.mp3">Track 3 - Song Three</li>
+            </ul>
         </section>
     </div>
 
@@ -363,5 +240,26 @@
         |
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
+
+    <!-- JavaScript for Playlist -->
+    <script>
+        const audioPlayer = document.getElementById('audio-player');
+        const playlistItems = document.querySelectorAll('.playlist li');
+
+        function loadTrack(src) {
+            audioPlayer.src = src;
+            audioPlayer.play();
+        }
+
+        playlistItems.forEach(item => {
+            item.addEventListener('click', function () {
+                playlistItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                loadTrack(item.getAttribute('data-src'));
+            });
+        });
+
+        loadTrack(playlistItems[0].getAttribute('data-src'));
+    </script>
 </body>
 </html>
