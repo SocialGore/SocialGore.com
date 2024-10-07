@@ -112,10 +112,10 @@
 
         /* Content Section */
         .content {
-            padding: 100px 50px; /* Ensure space for the header and navigation */
+            padding: 100px 50px;
             z-index: 2;
             position: relative;
-            min-height: 100vh; /* Ensure footer stays at the bottom */
+            min-height: 100vh;
         }
 
         .music-section iframe {
@@ -173,11 +173,9 @@
             const banner = document.querySelector('.sgbars-banner');
 
             if (window.scrollY > 50) {
-                // When scrolled, trigger the fade animations
                 logo.style.opacity = '0.6';
                 banner.style.opacity = '0.2';
             } else {
-                // Reset to original state at the top of the page
                 logo.style.opacity = '1';
                 banner.style.opacity = '0';
             }
