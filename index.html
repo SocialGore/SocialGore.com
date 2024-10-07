@@ -147,7 +147,7 @@
             font-size: 1.2rem;
             line-height: 1.6;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
         }
 
         /* Gear Grid Section */
@@ -156,6 +156,15 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 50px 0;
+        }
+
+        .gear-grid h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            grid-column: 1 / -1;
+            text-align: center;
         }
 
         .gear-item {
@@ -237,36 +246,13 @@
             margin-right: 10px;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
             }
 
-            header img.logo {
-                height: 90px;
-            }
-
-            .gear-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
             .content {
                 padding: 20px;
-            }
-
-            .services-section p {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-
-            .gear-info h3, .gear-info p {
-                font-size: 1rem;
             }
         }
     </style>
