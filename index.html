@@ -130,6 +130,26 @@
             margin: 0 auto;
         }
 
+        /* Services Section */
+        .services-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .services-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         /* Gear Grid Section */
         .gear-grid {
             display: grid;
@@ -141,16 +161,16 @@
         .gear-item {
             position: relative;
             overflow: hidden;
-            background-color: black; /* Fill empty space with black */
+            background-color: black;
             border-radius: 10px;
             cursor: pointer;
-            height: 300px; /* Ensure uniform height */
+            height: 300px;
         }
 
         .gear-item img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Keeps aspect ratio, fills any gaps with black */
+            object-fit: contain;
             display: block;
             transition: transform 0.3s ease;
         }
@@ -244,7 +264,7 @@
     <nav>
         <a href="#music">Music</a>
         <a href="#services">Services</a>
-        <a href="#gear">Gear</a> <!-- New Gear button added -->
+        <a href="#gear">Gear</a> <!-- Linked to the gear section -->
     </nav>
 
     <div class="content">
@@ -252,8 +272,24 @@
             <iframe style="border: 0; width: 100%; max-width: 600px; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
         </section>
 
+        <!-- Mixing/Mastering Services Section -->
+        <section id="services" class="services-section">
+            <h2>Mixing/Mastering</h2>
+            <p>
+                I offer professional mixing and mastering services designed to bring your music to life. Utilizing a hybrid mix setup with high-end analog gear, I ensure that every project benefits from a pristine signal path and the warmth and character that pro analog equipment can help deliver.<br><br>
+                I specialize in genres including:<br>
+                • Post-Metal<br>
+                • Post-Black Metal<br>
+                • Sludge<br>
+                • Noise-Rock<br>
+                • Hardcore<br>
+                • Punk
+            </p>
+        </section>
+
         <!-- Gear Grid Section -->
-        <section id="gear" class="gear-grid"> <!-- ID added for scrolling -->
+        <section id="gear" class="gear-grid">
+            <h2>Gear</h2> <!-- Header added for Gear section -->
             <!-- Gear Item 1 -->
             <div class="gear-item">
                 <img src="nevembp.jpg" alt="Rupert Neve Designs Portico II Master Buss Processor">
