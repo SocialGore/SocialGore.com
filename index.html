@@ -83,7 +83,6 @@
             position: relative;
         }
 
-        /* Add size change on hover */
         nav a {
             color: #bbb;
             text-decoration: none;
@@ -117,7 +116,7 @@
         nav a:hover {
             color: #fff;
             border-color: #fff;
-            transform: scale(1.1); /* Scale up by 10% on hover */
+            transform: scale(1.1);
         }
 
         .content {
@@ -132,13 +131,7 @@
             margin: 0 auto;
         }
 
-        /* Updated space between sections */
-        .content section {
-            margin-top: 80px; /* Increased space between sections */
-            margin-bottom: 80px;
-        }
-
-        /* Services Section (left-aligned) */
+        /* Services Section */
         .services-section {
             padding: 50px 0;
         }
@@ -258,10 +251,6 @@
                 background-attachment: scroll;
             }
 
-            header h1 {
-                font-size: 5rem;
-            }
-
             .content {
                 padding: 20px;
             }
@@ -271,7 +260,6 @@
 <body>
     <div class="overlay"></div>
 
-    <!-- Header with fading logo and SGbars banner -->
     <header>
         <img src="sgtextlogo.png" alt="Social Gore Logo" class="logo">
         <div class="sgbars-banner"></div>
@@ -289,7 +277,6 @@
             <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
         </section>
 
-        <!-- Mixing/Mastering Services Section -->
         <section id="services" class="services-section">
             <h2>Mixing/Mastering</h2>
             <p>
@@ -304,9 +291,9 @@
             </p>
         </section>
 
-        <!-- Gear Grid Section -->
         <section id="gear" class="gear-grid">
-            <h2>Gear</h2> <!-- Header added for Gear section -->
+            <h2>Gear</h2>
+
             <!-- Gear Item 1 -->
             <div class="gear-item">
                 <img src="nevembp.jpg" alt="Rupert Neve Designs Portico II Master Buss Processor">
@@ -325,7 +312,7 @@
                 </div>
             </div>
 
-            <!-- Gear Item 3 (Orion) -->
+            <!-- Gear Item 3 -->
             <div class="gear-item">
                 <img src="orion.jpg" alt="Orion 32 Channels">
                 <div class="gear-info">
@@ -333,36 +320,30 @@
                     <p>32 Channels of State-of-the-Art Conversion</p>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <!-- Gear Item 4 (Phoenix) -->
+            <!-- Gear Item 4 -->
             <div class="gear-item">
                 <img src="phoenix.jpg" alt="Thermionic Culture Phoenix">
                 <div class="gear-info">
-                    <h3>Orion</h3>
+                    <h3>Phoenix</h3>
                     <p>Premium Boutique Tube Compression</p>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <!-- Gear Item 5 (Vulture) -->
+            <!-- Gear Item 5 -->
             <div class="gear-item">
                 <img src="vulture.jpg" alt="Thermionic Culture Vulture">
                 <div class="gear-info">
-                    <h3>Orion</h3>
+                    <h3>Vulture</h3>
                     <p>Tube-Based Distortion</p>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <!-- Gear Item 6 (2500) -->
+            <!-- Gear Item 6 -->
             <div class="gear-item">
                 <img src="api2500.jpg" alt="API 2500">
                 <div class="gear-info">
-                    <h3>Orion</h3>
+                    <h3>API 2500</h3>
                     <p>Legendary Stereo Compressor</p>
                 </div>
             </div>
