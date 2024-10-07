@@ -83,6 +83,7 @@
             position: relative;
         }
 
+        /* Add size change on hover */
         nav a {
             color: #bbb;
             text-decoration: none;
@@ -90,7 +91,7 @@
             border: 2px solid #666;
             padding: 10px 20px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, transform 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -116,6 +117,7 @@
         nav a:hover {
             color: #fff;
             border-color: #fff;
+            transform: scale(1.1); /* Scale up by 10% on hover */
         }
 
         .content {
@@ -272,8 +274,8 @@
     <nav>
         <a href="#music">Music</a>
         <a href="#services">Services</a>
-        <a href="#gear">Gear</a> <!-- Linked to the gear section -->
-        <a href="store.html">Store</a> <!-- New Store button added -->
+        <a href="#gear">Gear</a>
+        <a href="store.html">Store</a>
     </nav>
 
     <div class="content">
