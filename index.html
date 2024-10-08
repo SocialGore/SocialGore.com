@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Gore</title>
+    <title>Social Gore Playlist</title>
 
     <!-- Favicon links for various platforms -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -37,7 +37,6 @@
             z-index: 1;
         }
 
-        /* Header with fading logo and SGbars banner */
         header {
             text-align: center;
             padding: 50px;
@@ -95,24 +94,6 @@
             overflow: hidden;
         }
 
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('SGbars.jpeg') no-repeat center center;
-            background-size: cover;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: -1;
-        }
-
-        nav a:hover::before {
-            opacity: 1;
-        }
-
         nav a:hover {
             color: #fff;
             border-color: #fff;
@@ -126,33 +107,45 @@
             min-height: 100vh;
         }
 
-        .music-section iframe {
-            display: block;
-            margin: 0 auto;
+        /* Playlist and Player */
+        .playlist-container {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .playlist {
             list-style: none;
             padding: 0;
-            margin-top: 20px;
-            text-align: center;
+            margin: 20px auto;
+            display: inline-block;
+            width: 80%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .playlist li {
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
-            background-color: #444;
-            margin: 5px 0;
-            border-radius: 8px;
+            background-color: #333;
+            border-bottom: 1px solid #444;
+            transition: background-color 0.3s ease;
             color: #fff;
         }
 
         .playlist li:hover {
+            background-color: #444;
+        }
+
+        .playlist li.active {
             background-color: #666;
         }
 
-        .active {
-            background-color: #888;
+        audio {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
         }
 
         footer {
@@ -181,16 +174,9 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                background-attachment: scroll;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
             .playlist li {
                 font-size: 0.9rem;
+                padding: 10px;
             }
         }
     </style>
@@ -214,18 +200,19 @@
         <section id="music" class="music-section">
             <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
             
-            <!-- Audio Player and Playlist -->
-            <h2>Custom Playlist</h2>
-            <audio id="audio-player" controls>
-                Your browser does not support the audio element.
-            </audio>
+            <!-- Custom Playlist Section -->
+            <div class="playlist-container">
+                <h2>Custom Playlist</h2>
+                <audio id="audio-player" controls>
+                    Your browser does not support the audio element.
+                </audio>
 
-            <!-- Playlist with multiple tracks -->
-            <ul class="playlist">
-                <li data-src="BrokenDreams.mp3">Track 1 - Song One</li>
-                <li data-src="audio/song2.mp3">Track 2 - Song Two</li>
-                <li data-src="audio/song3.mp3">Track 3 - Song Three</li>
-            </ul>
+                <ul class="playlist">
+                    <li data-src="BrokenDreams.mp3">Track 1</li>
+                    <li data-src="audio/song2.mp3">Track 2</li>
+                    <li data-src="audio/song3.mp3">Track 3</li>
+                </ul>
+            </div>
         </section>
     </div>
 
@@ -241,24 +228,30 @@
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
 
-    <!-- JavaScript for Playlist -->
+    <!-- Playlist JavaScript -->
     <script>
         const audioPlayer = document.getElementById('audio-player');
         const playlistItems = document.querySelectorAll('.playlist li');
 
+        // Function to load and play selected track
         function loadTrack(src) {
             audioPlayer.src = src;
             audioPlayer.play();
         }
 
+        // Add click event listeners to each playlist item
         playlistItems.forEach(item => {
             item.addEventListener('click', function () {
+                // Remove 'active' class from all items and add to the clicked item
                 playlistItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
+
+                // Load and play the clicked track
                 loadTrack(item.getAttribute('data-src'));
             });
         });
 
+        // Optionally, load and play the first track by default
         loadTrack(playlistItems[0].getAttribute('data-src'));
     </script>
 </body>
