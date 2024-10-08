@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Gore</title>
 
-    <!-- Plyr CSS -->
+    <!-- Plyr CSS with darker theme customization -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <style>
+        .plyr--full-ui input[type=range] {
+            color: #222; /* Darker slider color */
+        }
+        .plyr--full-ui .plyr__control {
+            background-color: #000;
+            color: #fff; /* Darker control button */
+        }
+        .plyr--full-ui .plyr__controls {
+            background-color: #333; /* Darker control bar */
+        }
+        .plyr--full-ui .plyr__progress input[type=range] {
+            background: #444; /* Darker progress bar */
+        }
+    </style>
 
     <!-- Plyr JavaScript -->
     <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
@@ -142,44 +157,13 @@
         /* Bandcamp player */
         .music-section iframe {
             width: 100%;
-            height: 200px;
+            height: 300px; /* Medium size */
             border: 0;
         }
 
-        /* Playlist and Plyr player */
-        .playlist-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .playlist {
-            list-style: none;
-            padding: 0;
-            margin: 20px auto;
+        /* Plyr Player */
+        .plyr-audio {
             width: 100%;
-            max-width: 400px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-        }
-
-        .playlist li {
-            padding: 15px;
-            cursor: pointer;
-            background-color: #333;
-            border-bottom: 1px solid #444;
-            transition: background-color 0.3s ease;
-            color: #fff;
-        }
-
-        .playlist li:hover {
-            background-color: #444;
-        }
-
-        .playlist li.active {
-            background-color: #666;
-        }
-
-        .plyr {
             margin-top: 20px;
         }
 
@@ -307,10 +291,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .playlist {
-                max-width: 100%;
-            }
-
             .content {
                 padding: 20px;
             }
@@ -334,23 +314,17 @@
 
     <div class="content">
         <section id="music" class="music-section">
-            <iframe style="border: 0; width: 444px; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
+            <iframe style="border: 0; width: 100%; height: 300px;" 
+                src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=medium/bgcol=333333/linkcol=ffffff/artwork=small/tracklist=false/transparent=true/" 
+                seamless>
+                <a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a>
+            </iframe>
 
             <!-- Plyr Player -->
-            <audio id="plyr-audio-player" class="plyr" controls>
+            <audio id="plyr-audio-player" class="plyr-audio" controls>
                 <source src="BrokenDreams.mp3" type="audio/mp3" />
                 Your browser does not support the audio element.
             </audio>
-
-            <!-- Playlist -->
-            <div class="playlist-container">
-                <h2>Custom Playlist</h2>
-                <ul class="playlist">
-                    <li data-src="BrokenDreams.mp3">Track 1</li>
-                    <li data-src="audio/song2.mp3">Track 2</li>
-                    <li data-src="audio/song3.mp3">Track 3</li>
-                </ul>
-            </div>
         </section>
 
         <!-- Mixing/Mastering Services Section -->
@@ -443,36 +417,13 @@
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
 
-    <!-- Playlist JavaScript -->
+    <!-- Plyr Player JavaScript -->
     <script>
-        const player = new Plyr('#plyr-audio-player');
-        const playlistItems = document.querySelectorAll('.playlist li');
-
-        // Function to load and play selected track
-        function loadTrack(src) {
-            player.source = {
-                type: 'audio',
-                sources: [
-                    {
-                        src: src,
-                        type: 'audio/mp3'
-                    }
-                ]
-            };
-            player.play();
-        }
-
-        // Add click event listeners to each playlist item
-        playlistItems.forEach(item => {
-            item.addEventListener('click', function () {
-                // Remove 'active' class from all items and add to the clicked item
-                playlistItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-
-                // Load and play the clicked track
-                loadTrack(item.getAttribute('data-src'));
-            });
+        const player = new Plyr('#plyr-audio-player', {
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings']
         });
+
+        // Add functionality to load tracks if necessary here
     </script>
 </body>
 </html>
