@@ -107,22 +107,37 @@
             min-height: 100vh;
         }
 
-        /* Playlist and Player */
+        /* Music Section layout */
+        .music-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        /* Bandcamp and Playlist Side by Side */
+        .music-section iframe {
+            width: 350px;
+            height: 442px;
+            border: 0;
+            flex: 1;
+            margin: 20px;
+        }
+
         .playlist-container {
+            flex: 1;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .playlist {
             list-style: none;
             padding: 0;
             margin: 20px auto;
-            display: inline-block;
-            width: 80%;
-            max-width: 600px;
+            width: 100%;
+            max-width: 400px;
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
-            overflow: hidden;
         }
 
         .playlist li {
@@ -146,6 +161,63 @@
             display: block;
             margin: 0 auto;
             margin-top: 20px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 50px 0;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .services-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0;
+        }
+
+        /* Gear Grid Section */
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 0;
+        }
+
+        .gear-grid h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .gear-item {
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+            border-radius: 10px;
+            cursor: pointer;
+            height: 300px;
+        }
+
+        .gear-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gear-item:hover img {
+            transform: scale(1.05);
         }
 
         footer {
@@ -174,9 +246,21 @@
         }
 
         @media (max-width: 768px) {
-            .playlist li {
-                font-size: 0.9rem;
-                padding: 10px;
+            body {
+                background-attachment: scroll;
+            }
+
+            .music-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .playlist {
+                max-width: 100%;
+            }
+
+            .content {
+                padding: 20px;
             }
         }
     </style>
@@ -198,8 +282,10 @@
 
     <div class="content">
         <section id="music" class="music-section">
-            <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a></iframe>
-            
+            <iframe src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless>
+                <a href="https://socialgore.bandcamp.com/track/the-pale-king">The Pale King by Social Gore</a>
+            </iframe>
+
             <!-- Custom Playlist Section -->
             <div class="playlist-container">
                 <h2>Custom Playlist</h2>
@@ -208,10 +294,87 @@
                 </audio>
 
                 <ul class="playlist">
-                    <li data-src="BrokenDreams.mp3">Track 1</li>
-                    <li data-src="audio/song2.mp3">Track 2</li>
-                    <li data-src="audio/song3.mp3">Track 3</li>
+                    <li data-src="audio/song1.mp3">Track 1 - Song One</li>
+                    <li data-src="audio/song2.mp3">Track 2 - Song Two</li>
+                    <li data-src="audio/song3.mp3">Track 3 - Song Three</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Mixing/Mastering Services Section -->
+        <section id="services" class="services-section">
+            <h2>Mixing/Mastering</h2>
+            <p>
+                I offer professional mixing and mastering services designed to bring your music to life. Utilizing a hybrid mix setup with high-end analog gear, I ensure that every project benefits from a pristine signal path and the warmth and character that pro analog equipment can help deliver.
+                <br><br>
+                I specialize in genres including:
+                <br>• Post-Metal
+                <br>• Post-Black Metal
+                <br>• Sludge
+                <br>• Noise-Rock
+                <br>• Hardcore
+                <br>• Punk
+            </p>
+        </section>
+
+        <!-- Gear Grid Section -->
+        <section id="gear" class="gear-grid">
+            <h2>
+                <img src="geartext.png" alt="Gear" style="max-width: 25%; height: auto;">
+            </h2>
+
+            <!-- Gear Item 1 -->
+            <div class="gear-item">
+                <img src="nevembp.jpg" alt="Rupert Neve Designs Portico II Master Buss Processor">
+                <div class="gear-info">
+                    <h3>Rupert Neve Designs Portico II</h3>
+                    <p>Master Buss Processor</p>
+                </div>
+            </div>
+
+            <!-- Gear Item 2 -->
+            <div class="gear-item">
+                <img src="nevesat.jpg" alt="5059 Satellite 16 x 2+2 Summing Mixer">
+                <div class="gear-info">
+                    <h3>5059 Satellite 16 x 2+2 Summing Mixer</h3>
+                    <p>16 x 2+2 Summing Mixer</p>
+                </div>
+            </div>
+
+            <!-- Gear Item 3 -->
+            <div class="gear-item">
+                <img src="orion.jpg" alt="Orion 32 Channels">
+                <div class="gear-info">
+                    <h3>Antelope Audio Orion 32+ Gen 3</h3>
+                    <p>32 Channels of State-of-the-Art Conversion</p>
+                </div>
+            </div>
+
+            <!-- Gear Item 4 -->
+            <div class="gear-item">
+                <img src="phoenix.jpg" alt="Thermionic Culture Phoenix">
+                <div class="gear-info">
+                    <h3>Thermionic Culture Phoenix</h3>
+                    <p>Premium Boutique Tube Compression</p>
+                </div>
+            </div>
+
+            <!-- Gear Item 5 -->
+            <div class="gear-item">
+                <img src="vulture.jpg" alt="Thermionic Culture Vulture">
+                <div class="gear-info">
+                    <h3>Thermionic Culture Vulture</h3>
+                    <p>Tube-Based Distortion</p>
+                </div>
+            </div>
+
+            <!-- Gear Item 6 -->
+            <div class="gear-item">
+                <img src="api2500.jpg" alt="API 2500">
+                <div class="gear-info">
+                    <h3>API 2500</h3>
+                    <p>Legendary Stereo Compressor</p>
+                </div>
             </div>
         </section>
     </div>
@@ -251,8 +414,7 @@
             });
         });
 
-        // Optionally, load and play the first track by default
-        loadTrack(playlistItems[0].getAttribute('data-src'));
+        // Do not autoplay the first track
     </script>
 </body>
 </html>
