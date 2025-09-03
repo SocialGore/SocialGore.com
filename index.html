@@ -191,6 +191,8 @@
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
 
+    <a href="#" id="back-to-top" class="back-to-top">^</a>
+
     <!-- Plyr Player JavaScript -->
     <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
     <script>
@@ -203,6 +205,27 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+
+    <!-- Back to Top Button JavaScript -->
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
