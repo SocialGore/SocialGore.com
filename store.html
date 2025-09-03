@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Gore Store</title>
+    <title>Social Gore</title>
 
-    <!-- Favicon links for various platforms -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
 
-    <meta name="description" content="Social Gore Store - Merchandise and music.">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Plyr CSS with darker theme customization -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <meta name="description" content="Social Gore is a post-metal band and music production service by Matt Bryant.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="background_video_cropped.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="overlay"></div>
 
-    <!-- Header with fading logo and SGbars banner -->
     <header>
         <img src="sgtextlogo.png" alt="Social Gore Logo" class="logo">
         <div class="sgbars-banner"></div>
@@ -29,46 +35,20 @@
 
     <nav>
         <a href="index.html">Home</a>
+        <a href="#music">Music</a>
+        <a href="#services">Services</a>
+        <a href="#gear">Gear</a>
+        <a href="store.html">Store</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <div class="content">
         <section id="store" class="store-section">
             <h2>Store</h2>
 
-            <!-- Store Grid Section -->
-            <div class="store-grid">
-                <!-- Product Item 1 -->
-                <div class="product-item">
-                    <img src="product1.jpg" alt="Product 1">
-                    <div class="product-info">
-                        <h3>Product 1</h3>
-                        <p>Description of product 1 goes here.</p>
-                        <a href="#">Buy Now</a>
-                    </div>
-                </div>
+            <!-- Gumroad Embed -->
+            <div class="gumroad-embed" data-gumroad-seller-id="socialgore.gumroad.com"></div>
 
-                <!-- Product Item 2 -->
-                <div class="product-item">
-                    <img src="product2.jpg" alt="Product 2">
-                    <div class="product-info">
-                        <h3>Product 2</h3>
-                        <p>Description of product 2 goes here.</p>
-                        <a href="#">Buy Now</a>
-                    </div>
-                </div>
-
-                <!-- Product Item 3 -->
-                <div class="product-item">
-                    <img src="product3.jpg" alt="Product 3">
-                    <div class="product-info">
-                        <h3>Product 3</h3>
-                        <p>Description of product 3 goes here.</p>
-                        <a href="#">Buy Now</a>
-                    </div>
-                </div>
-
-                <!-- Add more products as needed -->
-            </div>
         </section>
     </div>
 
@@ -83,5 +63,37 @@
         |
         <a href="mailto:matt@socialgore.com">Email</a>
     </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top">^</a>
+
+    <!-- Plyr Player JavaScript -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+    <script>
+        const player=new Plyr("#plyr-audio-player",{controls:["play","progress","current-time","mute","volume","settings"]});
+    </script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Back to Top Button JavaScript -->
+    <script>
+        const backToTopButton=document.getElementById("back-to-top");window.addEventListener("scroll",()=>{if(window.scrollY>300){backToTopButton.classList.add("visible")}else{backToTopButton.classList.remove("visible")}});backToTopButton.addEventListener("click",e=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})});
+    </script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500); // Match CSS transition duration
+        });
+    </script>
+
+    <!-- Gumroad Embed Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
