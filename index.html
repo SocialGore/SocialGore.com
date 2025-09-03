@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Gore</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Plyr CSS with darker theme customization -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <meta name="description" content="Social Gore is a post-metal band and music production service by Matt Bryant.">
@@ -27,7 +35,7 @@
     </nav>
 
     <div class="content">
-        <section id="music" class="music-section">
+        <section id="music" class="music-section" data-aos="fade-up">
             <iframe style="border: 0; width: 100%; height: 300px;" 
                 src="https://bandcamp.com/EmbeddedPlayer/track=914326512/size=medium/bgcol=333333/linkcol=ffffff/artwork=small/tracklist=false/transparent=true/" 
                 seamless>
@@ -47,7 +55,7 @@
         </section>
 
         <!-- Mixing/Mastering Services Section -->
-        <section id="services" class="services-section">
+        <section id="services" class="services-section" data-aos="fade-up">
             <h2>Mixing/Mastering</h2>
             <p>
                 I offer professional mixing and mastering services designed to bring your music to life. Utilizing a hybrid mix setup with high-end analog gear, I ensure that every project benefits from a pristine signal path and the warmth and character that pro analog equipment can help deliver.
@@ -63,13 +71,13 @@
         </section>
 
         <!-- Gear Grid Section -->
-        <section id="gear" class="gear-grid">
+        <section id="gear" class="gear-grid" data-aos="fade-up">
             <h2>
                 <img src="geartext.png" alt="Gear" style="max-width: 25%; height: auto;">
             </h2>
 
             <!-- Gear Item 1 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up">
                 <img src="nevembp.jpg" alt="Rupert Neve Designs Portico II Master Buss Processor">
                 <div class="gear-info">
                     <h3>Rupert Neve Designs Portico II</h3>
@@ -78,7 +86,7 @@
             </div>
 
             <!-- Gear Item 2 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up" data-aos-delay="100">
                 <img src="nevesat.jpg" alt="5059 Satellite 16 x 2+2 Summing Mixer">
                 <div class="gear-info">
                     <h3>5059 Satellite 16 x 2+2 Summing Mixer</h3>
@@ -87,7 +95,7 @@
             </div>
 
             <!-- Gear Item 3 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up" data-aos-delay="200">
                 <img src="orion.jpg" alt="Orion 32 Channels">
                 <div class="gear-info">
                     <h3>Antelope Audio Orion 32+ Gen 3</h3>
@@ -96,7 +104,7 @@
             </div>
 
             <!-- Gear Item 4 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up">
                 <img src="phoenix.jpg" alt="Thermionic Culture Phoenix">
                 <div class="gear-info">
                     <h3>Thermionic Culture Phoenix</h3>
@@ -105,7 +113,7 @@
             </div>
 
             <!-- Gear Item 5 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up" data-aos-delay="100">
                 <img src="vulture.jpg" alt="Thermionic Culture Vulture">
                 <div class="gear-info">
                     <h3>Thermionic Culture Vulture</h3>
@@ -114,7 +122,7 @@
             </div>
 
             <!-- Gear Item 6 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up" data-aos-delay="200">
                 <img src="api2500.jpg" alt="API 2500">
                 <div class="gear-info">
                     <h3>API 2500</h3>
@@ -123,7 +131,7 @@
             </div>
 
             <!-- Gear Item 7 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up">
                 <img src="distressor.jpg" alt="Distressor">
                 <div class="gear-info">
                     <h3>Distressor</h3>
@@ -132,7 +140,7 @@
             </div>
 
             <!-- Gear Item 8 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up" data-aos-delay="100">
                 <img src="1176.jpg" alt="UAD 1176">
                 <div class="gear-info">
                     <h3>UAD 1176</h3>
@@ -141,7 +149,7 @@
             </div>
         
             <!-- Gear Item 9 -->
-            <div class="gear-item">
+            <div class="gear-item" data-aos="fade-up" data-aos-delay="200">
                 <img src="1073LB.jpg" alt="Neve 1073LB">
                 <div class="gear-info">
                     <h3>Neve 1073LB</h3>
@@ -151,7 +159,7 @@
         </section>
 
         <!-- Contact Form Section -->
-        <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section" data-aos="fade-up">
             <h2>Contact</h2>
             <form action="https://formspree.io/f/xblazejz" method="POST">
                 <div class="form-group">
@@ -184,12 +192,17 @@
     </footer>
 
     <!-- Plyr Player JavaScript -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
     <script>
         const player = new Plyr('#plyr-audio-player', {
             controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings']
         });
+    </script>
 
-        // Add functionality to load tracks if necessary here
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
 </body>
 </html>
