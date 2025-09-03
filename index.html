@@ -196,9 +196,7 @@
     <!-- Plyr Player JavaScript -->
     <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
     <script>
-        const player = new Plyr('#plyr-audio-player', {
-            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings']
-        });
+        const player=new Plyr("#plyr-audio-player",{controls:["play","progress","current-time","mute","volume","settings"]});
     </script>
 
     <!-- AOS JavaScript -->
@@ -209,23 +207,7 @@
 
     <!-- Back to Top Button JavaScript -->
     <script>
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        const backToTopButton=document.getElementById("back-to-top");window.addEventListener("scroll",()=>{if(window.scrollY>300){backToTopButton.classList.add("visible")}else{backToTopButton.classList.remove("visible")}});backToTopButton.addEventListener("click",e=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})});
     </script>
 </body>
 </html>
