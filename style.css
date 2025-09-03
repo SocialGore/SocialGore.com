@@ -157,7 +157,8 @@
             font-size: 1.2rem;
             line-height: 1.6;
             max-width: 800px;
-            margin: 0;
+            margin: 0 auto;
+            text-align: center;
         }
 
         /* Gear Grid Section */
@@ -229,6 +230,71 @@
             color: #bbb;
             text-align: center;
             padding: 0 10px;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .contact-section form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-section .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .contact-section label {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            padding: 10px;
+            border: 2px solid #666;
+            background-color: #222;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-section input:focus,
+        .contact-section textarea:focus {
+            outline: none;
+            border-color: #fff;
+        }
+
+        .contact-section button {
+            padding: 10px 20px;
+            border: 2px solid #666;
+            background-color: transparent;
+            color: #bbb;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
         }
 
         footer {
