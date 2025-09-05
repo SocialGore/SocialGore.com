@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #fff;
     --secondary-color: #bbb;
@@ -19,7 +18,7 @@ body, html {
     color: var(--primary-color);
     background-color: var(--background-color);
     scroll-behavior: smooth;
-    padding-top: 100px; /* Initial padding for fixed header */
+    padding-top: 100px; /* Padding for fixed header */
 }
 
 #preloader {
@@ -73,25 +72,23 @@ body, html {
     z-index: 1;
 }
 
-/* Shrinking Header Styles */
+/* Fixed Header Styles */
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    transition: all 0.5s ease;
-    background-color: transparent; /* Initially transparent */
-    padding: 20px 40px; /* Initial padding */
+    background-color: rgba(0,0,0,0.8); /* Solid background */
+    padding: 20px 40px; /* Fixed padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .site-header .logo {
-    max-width: 500px; /* Initial large size */
+    max-width: 150px; /* Fixed size */
     height: auto;
-    transition: all 0.5s ease;
 }
 
 .site-header .main-nav {
@@ -109,16 +106,6 @@ body, html {
 
 .site-header .main-nav a:hover {
     color: var(--secondary-color);
-}
-
-.site-header.scrolled {
-    background-color: rgba(0,0,0,0.8);
-    border-bottom: 1px solid #333;
-    padding: 10px 40px; /* Shrunk padding */
-}
-
-.site-header.scrolled .logo {
-    max-width: 150px; /* Shrunk size */
 }
 
 .content {

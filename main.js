@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // Preloader
@@ -8,16 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             preloader.style.display = 'none';
         }, 500);
-    });
-
-    // Shrinking Header
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.site-header');
-        if (window.scrollY > 50) { // Adjust this value as needed
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
     });
 
     // Playlist Player
