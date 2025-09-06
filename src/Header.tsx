@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 50) { // Adjust this threshold as needed
         document.body.classList.add('scrolled');
       } else {
         document.body.classList.remove('scrolled');
