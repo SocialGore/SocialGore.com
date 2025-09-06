@@ -78,16 +78,26 @@ body, html {
     left: 0;
     right: 0;
     z-index: 100;
-    background-color: rgba(0,0,0,0.8); /* Solid background */
-    padding: 20px 40px; /* Fixed padding */
+    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px 40px;
 }
 
 .site-header .logo {
-    max-width: 150px; /* Fixed size */
+    max-width: 200px;
     height: auto;
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled .logo {
+    max-width: 100px;
 }
 
 .site-header .main-nav {
@@ -307,4 +317,31 @@ body, html {
     .music-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+footer a {
+    display: inline-block;
+}
+
+footer img {
+    width: 30px;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+footer img:hover {
+    opacity: 0.7;
+}
+
+.gumroad-embed-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
