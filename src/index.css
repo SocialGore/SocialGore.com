@@ -102,12 +102,10 @@ h1, h2 {
 
 /* New Header Styles */
 #main-logo-container {
-    position: absolute; /* Changed to absolute */
-    top: 0; /* Positioned at the top */
+    position: fixed; /* Changed to fixed */
+    top: 50%; /* Centered vertically in viewport */
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    width: 100%; /* Allow horizontal centering */
-    padding-top: 20px; /* Give some space from the top */
+    transform: translate(-50%, -50%); /* Center horizontally */
     z-index: 999;
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none; /* Allow clicks through */
