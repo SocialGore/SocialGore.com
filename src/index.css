@@ -23,6 +23,10 @@ body, html {
     overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
+body.scrolled {
+    padding-top: 80px; /* Adjust based on header height when visible */
+}
+
 #preloader {
     position: fixed;
     top: 0;
@@ -98,12 +102,11 @@ h1, h2 {
 
 /* New Header Styles */
 #main-logo-container {
-    position: fixed; /* Changed to fixed */
+    position: absolute; /* Changed to absolute */
     top: 0; /* Positioned at the top */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     width: 100%; /* Allow horizontal centering */
-    text-align: center; /* Center the image */
     padding-top: 20px; /* Give some space from the top */
     z-index: 999;
     transition: opacity 0.3s ease, transform 0.3s ease;
