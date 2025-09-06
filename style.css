@@ -302,20 +302,20 @@ footer img:hover {
 }
 
 /* New Header Styles */
-.main-logo {
+#main-logo-container {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
-.main-logo img {
+#main-logo-container img {
     max-width: 400px;
 }
 
-.site-header {
+#site-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -325,27 +325,30 @@ footer img:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
-    transition: all 0.3s ease;
+    background-color: rgba(0,0,0,0.8);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     opacity: 0;
     visibility: hidden;
 }
 
-.site-header.scrolled {
-    background-color: rgba(0,0,0,0.8);
+body.scrolled #site-header {
     opacity: 1;
     visibility: visible;
 }
 
-.site-header .logo-container {
+body.scrolled #main-logo-container {
+    opacity: 0;
+}
+
+#site-header .logo-container {
     max-width: 100px;
 }
 
-.site-header .logo {
+#site-header .logo {
     max-width: 100%;
 }
 
-.site-header .main-nav a {
+#site-header .main-nav a {
     color: var(--primary-color);
     text-decoration: none;
     font-size: 1.1rem;
@@ -354,6 +357,7 @@ footer img:hover {
     transition: color 0.3s ease;
 }
 
-.site-header .main-nav a:hover {
+#site-header .main-nav a:hover {
     color: var(--secondary-color);
 }
+

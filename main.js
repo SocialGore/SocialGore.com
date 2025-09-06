@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Header Scroll Effect
-    const mainLogo = document.querySelector('.main-logo');
-    const siteHeader = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            mainLogo.style.opacity = '0';
-            siteHeader.classList.add('scrolled');
+            document.body.classList.add('scrolled');
         } else {
-            mainLogo.style.opacity = '1';
-            siteHeader.classList.remove('scrolled');
+            document.body.classList.remove('scrolled');
         }
     });
 
