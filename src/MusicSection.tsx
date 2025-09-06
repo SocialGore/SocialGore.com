@@ -7,7 +7,7 @@ const MusicSection: React.FC = () => {
       url: "/BrokenDreams.mp3",
       title: "Broken Dreams",
       artist: "Social Gore",
-      artwork: "/image1.jpg",
+      artwork: "",
       chapters: []
     },
   ];
