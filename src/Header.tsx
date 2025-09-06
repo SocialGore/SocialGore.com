@@ -2,16 +2,11 @@ import React, { useEffect } from 'react';
 
 const Header: React.FC = () => {
   useEffect(() => {
-    const mainLogoContainer = document.getElementById('main-logo-container');
-    const siteHeader = document.getElementById('site-header');
-
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        if (mainLogoContainer) mainLogoContainer.style.opacity = '0';
-        if (siteHeader) siteHeader.classList.add('scrolled');
+        document.body.classList.add('scrolled');
       } else {
-        if (mainLogoContainer) mainLogoContainer.style.opacity = '1';
-        if (siteHeader) siteHeader.classList.remove('scrolled');
+        document.body.classList.remove('scrolled');
       }
     };
 
