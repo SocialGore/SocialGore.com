@@ -43,8 +43,6 @@ function App() {
 
       {/* Main content will go here */}
       <div className="content">
-        <h1>Welcome to Social Gore (React Version)</h1>
-        <p>This is a placeholder for your content.</p>
         <MusicSection />
         <ServicesSection />
         <GearSection />
